@@ -1,0 +1,22 @@
+body {
+  font-family: 'Gochi Hand', cursive;
+  background-image: url('http://img14.deviantart.net/d14d/i/2004/150/e/d/wallnotebookpaper.jpg');
+}
+a{
+  font-size:40px;
+  margin-left: 20px;
+  color: blue;
+}
+a:hover{
+  color: red;
+}
+
+/* To ease up layouting a little, I use flexbox */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
