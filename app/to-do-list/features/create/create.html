@@ -1,26 +1,21 @@
-<h2>Create A Todo list!</h2>
-<!-- link tag -->
-<a ui-sref="list">List</a>
-<a ui-sref="create">Create</a>
-<a ui-sref="completed">Completed</a>
-<br>
-<form>
-    <!-- ng-model is a built in Angular directive which ties the value of the textbox to the variable -->
-    Name: <input type="test" name="heroName" ng-model="DashboardVM.story.heroName">
-    <br>
-    Gender: <input type="radio" value="male" ng-model="DashboardVM.story.heroGender"> Male <input type="radio" value="female" ng-model="DashboardVM.story.heroGender"> Female
-    <br>
-    City: <input type="text" name="city" ng-model="DashboardVM.story.heroCity">
-    <br>
+<div class="main">
+  <h3>Create A Todo list!</h3>
 
-    Fights A: <input type="text" name="fights" ng-model="DashboardVM.story.heroFights">
-    <br>
-    Outcome: <input type="radio" value="win" ng-model="DashboardVM.story.heroFightOutcome"> Wins <input type="radio" value="lost" ng-model="DashboardVM.story.heroFightOutcome"> Lost
-    <br>
-    <input type="button" value="Save" ng-click="DashboardVM.addBook()">
-</form>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="What do you need to do?" id="textarea1" type="text">
+      </div>
+    </div>
+  </form>
+</div>
 <br>
-<hr>
+<div class="row">
+  <form class="col s4">
+        <label class="duedate">Due Date</label>
+        <input type="date" class="datepicker">
+  </form>
+</div>
 <br>
-
-<story-content story-data="DashboardVM.story"></story-content>
+<button class="btn waves-effect waves-light blue" type="submit" name="action">Submit</button>

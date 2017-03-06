@@ -21,25 +21,37 @@
         <link rel="stylesheet" href="to-do-list/layout/assets/styles/layout.css">
     </head>
     <body ng-app="toDo">
-        <!-- The ui-view directive is provided by ui-router and is where our main view for our route will be injected -->
-        <ui-view></ui-view>
+      <h1 class="center">To-Do list</h1>
 
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-        <!-- main module -->
-        <script src="to-do-list/toDo.module.js"></script>
+      <div class="nav-wrapper container center">
+        <!-- link tag -->
+        <a class="center"ui-sref="list">List</a>
+        <a class="center"ui-sref="create">Create</a>
+        <a class="center"ui-sref="completed">Completed</a>
+      </div>
 
-        <!-- We need to include EVERY JS file for our application here -->
-        <script src="to-do-list/features/completed/completed.module.js"></script>
-        <script src="to-do-list/features/completed/completed.controller.js"></script>
-        <script src="to-do-list/features/completed/completed.route.js"></script>
+      <ui-view></ui-view>
 
-        <script src="to-do-list/features/create/create.module.js"></script>
-        <script src="to-do-list/features/create/create.controller.js"></script>
-        <script src="to-do-list/features/create/create.route.js"></script>
+      <!-- jQuery-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!-- materialize-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-        <script src="to-do-list/features/list/list.module.js"></script>
-        <script src="to-do-list/features/list/list.controller.js"></script>
-        <script src="to-do-list/features/list/list.route.js"></script>
+
+      <!-- main module -->
+      <script src="to-do-list/toDo.module.js"></script>
+
+      <!-- We need to include EVERY JS file for our application here -->
+      <script src="to-do-list/features/completed/completed.module.js"></script>
+      <script src="to-do-list/features/completed/completed.controller.js"></script>
+      <script src="to-do-list/features/completed/completed.route.js"></script>
+
+      <script src="to-do-list/features/create/create.module.js"></script>
+      <script src="to-do-list/features/create/create.controller.js"></script>
+      <script src="to-do-list/features/create/create.route.js"></script>
+
+      <script src="to-do-list/features/list/list.module.js"></script>
+      <script src="to-do-list/features/list/list.controller.js"></script>
+      <script src="to-do-list/features/list/list.route.js"></script>
     </body>
 </html>
