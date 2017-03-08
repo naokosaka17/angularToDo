@@ -1,21 +1,20 @@
 <div class="main">
   <h3>Create A Todo list!</h3>
 
-<div class="row">
   <form class="col s12">
     <div class="row">
-      <div class="input-field col s12">
-        <input placeholder="What do you need to do?" id="textarea1" type="text">
-      </div>
+        <div class="input-field col s12">
+          <input ng-model="CreateVM.data.text" placeholder="What do you need to do?" id="textarea1" type="text">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <label class="duedate">Due Date</label>
+        <input ng-model="CreateVM.data.date" type="date" class="datepicker">
+    </div>
+    <br>
+    <div class="row">
+        <input type="submit" id="button" ng-click="CreateVM.createdata()" value="button" >
     </div>
   </form>
 </div>
-<br>
-<div class="row">
-  <form class="col s4">
-        <label class="duedate">Due Date</label>
-        <input type="date" class="datepicker">
-  </form>
-</div>
-<br>
-<button class="btn waves-effect waves-light blue" type="submit" name="action">Submit</button>

@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/naokosaka17/angularToDo#readme",
   "dependencies": {
-    "express": "^4.15.1"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.1",
+    "mongoose": "^4.8.6"
   }
 }
