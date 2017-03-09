@@ -21,6 +21,10 @@ h3{
   margin-top:23px;
 }
 
+.collection{
+  font-size: 25px;
+  padding-left: 20px;
+}
 .collection a.collection-item{
   line-height: 28px;
   color: #000;

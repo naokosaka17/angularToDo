@@ -4,12 +4,9 @@ angular
 
 function ListCtrl($http) {
   var vm = this;
-  vm.data = {
-    text: '',
-    date: ''
-  };
 
-     $http.get('/api/todos').then(function(data){
-       console.log(data);
+     $http.get('/api/todos').then(function(cb){
+       vm.list = cb.data;
+       console.log(cb.data);
      });
 }

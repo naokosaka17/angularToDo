@@ -1,6 +1,6 @@
 <div class="main">
   <h3>Overdue</h3>
-  <div class="collection" ng-model="ListVM.data.text"></div>
+  <div class="collection" ng-repeat="i in ListVM.list">{{i.actualTodo}}</div>
   <br>
 
   <h3>Due Today</h3>
