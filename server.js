@@ -67,6 +67,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
         });
     });
 
-app.listen(port, function() {
-    console.log("listening on port:" + port);
-});
+// app.listen(port, function() {
+//     console.log("listening on port:" + port);
+// });
+
+app.listen(process.env.PORT || 3000);
