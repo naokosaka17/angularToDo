@@ -1,11 +1,12 @@
 // set up ======================================================================
 // dependencies
 var express = require('express');
+var methodOverride = require('method-override');
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 //express setup
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 //import Todo models
 var Todo = require("./app/models/ToDo.js");
 
@@ -17,7 +18,7 @@ mongoose.Promise = Promise;
 app.use(express.static(__dirname + "/app"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_7b2825r4:748rn1tnvauh8gvua7g3auqaq1@ds123400.mlab.com:23400/heroku_7b2825r4");
+mongoose.connect("mongodb://localhost/angularToDo");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -35,6 +36,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded ({ extended:true }));
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+// method-override
+app.use(methodOverride('X-HTTP-Method-Override'));
 
 // routes ===============================================================
 // get all todos
@@ -67,8 +70,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
         });
     });
 
-// app.listen(port, function() {
-//     console.log("listening on port:" + port);
-// });
-
-app.listen(process.env.PORT || 3000);
+app.listen(port,function (){
+  console.log("listening on port:" + port);
+});
