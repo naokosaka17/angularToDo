@@ -1,13 +1,18 @@
 <div class="main">
-  <h3>Overdue</h3>
-  <div class="collection" ng-repeat="i in ListVM.list">{{i.actualTodo}}</div>
-  <br>
+  <form action="#">
+    <h3>Overdue</h3>
+    <p ng-repeat="i in ListVM.list"
+       ng-click="ListVM.check(i._id)">
+        <input type="checkbox" class="filled-in checkbox-red" id="{{i._id}}" />
+        <label for="{{i._id}}">{{i.actualTodo}}</label>
+    </p>
+    <br>
 
-  <h3>Due Today</h3>
-  <div class="collection"></div>
-  <br>
+    <h3>Due Today</h3>
+    <div class="collection"></div>
+    <br>
 
-  <h3>Due Later</h3>
-  <div class="collection"></div>
-
+    <h3>Due Later</h3>
+    <div class="collection"></div>
+  </form>
 </div>

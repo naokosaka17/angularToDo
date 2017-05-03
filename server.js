@@ -40,7 +40,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // routes ===============================================================
-// get all todos
+  // get all todos
     app.get('/api/todos', function(req, res) {
 
         // use mongoose to get all todos in the database
@@ -54,7 +54,20 @@ app.use(methodOverride('X-HTTP-Method-Override'));
         });
     });
 
-// create todo and send back all todos after creation
+  //UPDATE todos
+  app.post('/api/completed', function (req, res){
+    //get data DB
+    console.log(req.body.id);
+    Todo.findById(req.body.id, function(err, row){
+      if (err) throw err;
+      //chage from false --> true
+      row.completeBy = true;
+      row.save();
+    });
+  });
+
+
+  // create todo and send back all todos after creation
     app.post('/api/todos', function(req, res) {
       console.log(req.body);
         // create a todo, information comes from AJAX request from Angular

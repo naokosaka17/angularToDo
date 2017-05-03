@@ -9,4 +9,11 @@ function ListCtrl($http) {
        vm.list = cb.data;
        console.log(cb.data);
      });
+
+     vm.check = function(id){
+     $http.post('/api/completed',{ id : id})
+      .then(function(response){
+        console.log(response);
+      });
+    };
 }

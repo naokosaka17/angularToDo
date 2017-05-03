@@ -30,6 +30,24 @@ h3{
   color: #000;
 }
 
+/*list page*/
+label{
+  color: #000;
+}
+
+label.ng-binding{
+  font-size: 3rem;
+  line-height: 30px;
+}
+
+.checkbox-red[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid red;
+     background-color: red;
+}
+
+
+
+
 /*create page */
 input#textarea1{
   border-bottom: 1px solid #6BD0F5;
