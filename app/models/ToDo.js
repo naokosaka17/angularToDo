@@ -14,8 +14,8 @@ var ToDoSchema = new Schema({
     default:false
   },
   dueDate: {
-  type: Date,
-  default: new Date(+new Date() + 24*60*60*1000)
+    type: Date,
+    required: true
   }
 });
 

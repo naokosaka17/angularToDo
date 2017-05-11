@@ -6,8 +6,8 @@ function ListCtrl($http) {
   var vm = this;
 
      $http.get('/api/todos').then(function(cb){
+       console.table(cb.data);
        vm.list = cb.data;
-       console.log(cb.data);
      });
 
      vm.check = function(id){

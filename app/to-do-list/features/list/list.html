@@ -8,11 +8,11 @@
     </p>
     <br>
 
-    <h3>Due Today</h3>
-    <div class="collection"></div>
-    <br>
-
     <h3>Due Later</h3>
-    <div class="collection"></div>
+    <p ng-repeat="i in ListVM.list"
+       ng-click="ListVM.check(i._id)">
+        <input type="checkbox" class="filled-in checkbox-red" id="{{i._id}}" />
+        <label for="{{i._id}}">{{i.actualTodo}}</label>
+    </p>
   </form>
 </div>

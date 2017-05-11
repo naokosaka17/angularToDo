@@ -8,6 +8,8 @@ function CreateCtrl($http) {
     text: '',
     date: ''
   };
+
+
   vm.createdata = function(){
     var entry = {
       actualTodo: vm.data.text,
