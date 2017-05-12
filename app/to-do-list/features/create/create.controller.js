@@ -9,7 +9,6 @@ function CreateCtrl($http) {
     date: ''
   };
 
-
   vm.createdata = function(){
     var entry = {
       actualTodo: vm.data.text,
@@ -18,5 +17,6 @@ function CreateCtrl($http) {
     $http.post('/api/todos', entry).then(function(data){
       console.log(data);
     });
+
   };
 }

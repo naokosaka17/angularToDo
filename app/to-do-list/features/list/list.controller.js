@@ -3,6 +3,7 @@ angular
     .controller('ListCtrl', ListCtrl); // Define our controller (Notice the naming convention - uppercase first letter, Ctrl suffix)
 
 function ListCtrl($http) {
+
   var vm = this;
 
      $http.get('/api/todos').then(function(cb){
@@ -21,17 +22,18 @@ function ListCtrl($http) {
             //change mongo time(2017-5-11T10:32:32) to seconds
              cb.data[i].dueDate = (new Date(cb.data[i].dueDate)).getTime();
             //change milliseconds to human readable date for Due today
-             cb.data[i].isTod = (new Date(cb.data[i].dueDate).toString().slice(0,15))
-             console.log(cb.data[i].isTod)
+             cb.data[i].isTod = (new Date(cb.data[i].dueDate).toString().slice(0,15));
+             console.log(cb.data[i].isTod);
 
          }
 
      });
 
-     vm.check = function(id){
+    vm.check = function(id){
      $http.post('/api/completed',{ id : id})
       .then(function(response){
         console.log(response);
       });
     };
+
 }
