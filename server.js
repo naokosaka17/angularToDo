@@ -66,6 +66,18 @@ app.use(methodOverride('X-HTTP-Method-Override'));
     });
   });
 
+  // clear complete (true -> false)
+  app.post('/api/uncompleted', function (req, res){
+    //get data DB
+    console.log(req.body.id);
+    Todo.findById(req.body.id, function(err, row){
+      if (err) throw err;
+      //chage from true --> false
+      row.completeBy = false;
+      row.save();
+    });
+  });
+
 
   // create todo and send back all todos after creation
     app.post('/api/todos', function(req, res) {

@@ -8,7 +8,12 @@ function CompletedCtrl($http) {
 
   $http.get('/api/todos').then(function(cb){
     vm.list = cb.data;
-
-
   });
+
+  vm.check = function(id){
+   $http.post('/api/uncompleted',{ id : id})
+    .then(function(response){
+      console.log(response);
+    });
+  };
 }
