@@ -18,7 +18,7 @@ mongoose.Promise = Promise;
 app.use(express.static(__dirname + "/app"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/angularToDo");
+mongoose.connect("mongodb://heroku_r3lvdd1n:6pkhu7aen46b9rm4tt31t42k4u@ds137261.mlab.com:37261/heroku_r3lvdd1n");
 var db = mongoose.connection;
 
 // Show any mongoose errors
